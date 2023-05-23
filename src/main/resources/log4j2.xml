@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="{ &quot;timestamp&quot;: &quot;%d{HH:mm:ss.SSS}&quot;,  &quot;logLevel&quot;: &quot;%-5level&quot;,  &quot;logger&quot;: &quot;%logger{36}&quot;,  &quot;message&quot;: &quot;%msg&quot; }%n"/>
+        </Console>
+        <Console name="JSON_MESSAGE" target="SYSTEM_OUT">
+            <PatternLayout pattern="{ &quot;timestamp&quot;: &quot;%d{HH:mm:ss.SSS}&quot;,  &quot;logLevel&quot;: &quot;%-5level&quot;,  &quot;logger&quot;: &quot;%logger{36}&quot;,  &quot;message&quot;: %msg }%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+        </Root>
+        <Logger name="JSON_LOGGER" level="info" additivity="false">
+            <AppenderRef ref="JSON_MESSAGE"/>
+        </Logger>
+    </Loggers>
+
+</Configuration>
